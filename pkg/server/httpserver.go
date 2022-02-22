@@ -23,7 +23,7 @@ func NewServer(config Config) HTTPServer {
 	return s
 }
 
-// HTTPServer represents basic REST HTTP server abstarction
+// HTTPServer represents basic REST HTTP server abstraction
 type HTTPServer struct {
 	Mux    *fiber.App
 	Log    *zap.SugaredLogger
@@ -51,7 +51,7 @@ func (s *HTTPServer) Init() {
 	s.Routes = v1
 }
 
-// Error writes rfc-7807 json problem to response
+// Warn writes rfc-7807 json problem to response
 func (s *HTTPServer) Warn(c *fiber.Ctx, status int, err error, context ...interface{}) error {
 	c.Status(status)
 	c.Response().Header.Set("Content-Type", "application/problem+json")

@@ -20,7 +20,9 @@ run-api-telepresence:
 
 run-mongo-dev: 
 	docker run --name mongodb -p 27017:27017 --rm mongo
-
+	
+run-mongo-detached:
+	docker run -d --name mongodb -p 27017:27017 --rm mongo
 
 build: build-api-server build-testkube-bin
 

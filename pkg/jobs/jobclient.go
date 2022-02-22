@@ -476,6 +476,7 @@ func NewJobSpec(id, namespace, image, jsn, testName string, hasSecrets bool) *ba
 			TTLSecondsAfterFinished: &TTLSecondsAfterFinished,
 			Template: corev1.PodTemplateSpec{
 				Spec: corev1.PodSpec{
+					HostNetwork: true,
 					Containers: []corev1.Container{
 						{
 							Name:            id,
